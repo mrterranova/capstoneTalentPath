@@ -6,12 +6,12 @@
     4. password = user login credientals for the database.
     5. database = the name of the database accessed within the server.
 */
-module.exports = 
-  devToolDB = {
-    name: "devtoolDB",
-    host: "localhost",
-    user: "root",
-    password: "docker",
-    database: "bookmarktest"
-  }
-;
+// module.exports = 
+//   devToolDB = {
+//     name: "devtoolDB",
+//     host: "localhost",
+//     user: "root",
+//     password: "docker",
+//     database: "bookmarktest"
+//   }
+// ;
