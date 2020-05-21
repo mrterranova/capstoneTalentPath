@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "docker",
-    "database": "donateFarmers",
+    "database": "donations",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

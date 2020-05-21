@@ -41,6 +41,13 @@ module.exports = (sequelize, DataTypes) => {
             default : Date.now()
         }
     });
-
+    
+    Receipt.associate = models => {
+        Receipt.belongsTo(models.Donator, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    }
     return Receipt;
 };

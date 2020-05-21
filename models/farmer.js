@@ -2,7 +2,7 @@
 var bcrypt = require("bcryptjs");
 // Creating our User model
 console.log("FARMER");
-module.exports = (sequelize, DataTypes) => {
+module.exports = function(sequelize, DataTypes) {
     var Farmer = sequelize.define("Farmer", {
         first_name: {
             type : DataTypes.STRING,
@@ -79,5 +79,10 @@ module.exports = (sequelize, DataTypes) => {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
       });
 
+      Farmer.associate = function(models) {
+        Farmer.hasMany(models.Product, {
+             onDelete:"Cascade" 
+           });
+        }
     return Farmer;
-};
+}

@@ -35,7 +35,8 @@ passport.use(new LocalStrategy(
       // If none of the above, return the user
       return done(null, dbUser);
     });
-  } else if (role === "Donator") {
+  } 
+  if (role === "Donator") {
          db.Farmer.findOne({
         where: {
           email: email
