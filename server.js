@@ -23,7 +23,11 @@ app.use(passport.session());
 
 //      Routes
 //====================
-
+require("./routes/passport-routes.js")(app);
+require("./routes/donator-routes.js")(app);
+require("./routes/farmer-routes.js")(app);
+require("./routes/product-routes.js")(app);
+require("./routes/receipt-routes.js")(app)
 
 //syncing sequelize models and starting express app
 
