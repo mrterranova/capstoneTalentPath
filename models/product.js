@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     var Product = sequelize.define("Product", {
-        farm_name : {
+        last_name : {
             type : DataTypes.STRING, 
             allowNull: false, 
             validate : {
@@ -12,6 +12,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull : false, 
             validate : {
                 len : [1-30]
+            }
+        },
+        zip : {
+            type : DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                len : [4-10]
             }
         },
         whenCrops_due : {

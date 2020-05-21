@@ -1,6 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-    var Application = sequelize.define("Application" ,{
-        name : {
+    var Reciept = sequelize.define("Reciept" ,{
+        first_name : {
+            type : DataTypes.STRING, 
+            allowNull: false, 
+            validate : {
+                len : [1-30]
+            }
+        },
+        last_name : {
             type : DataTypes.STRING, 
             allowNull: false, 
             validate : {
@@ -21,6 +28,13 @@ module.exports = (sequelize, DataTypes) => {
                 len : [1-8]
             }
         }, 
+        donation_to : {
+            type : DataTypes.STRING,
+            allowNull : false,
+            validate : {
+                len: [1-35]
+            }
+        },
         date_given : {
             type : DataTypes.DATE, 
             allowNull : false, 
@@ -28,5 +42,5 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    return Application;
+    return Reciept;
 };
