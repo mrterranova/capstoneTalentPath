@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    var Reciept = sequelize.define("Reciept" ,{
+    let Receipt = sequelize.define("Receipt" ,{
         first_name : {
             type : DataTypes.STRING, 
             allowNull: false, 
@@ -42,5 +42,5 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    return Reciept;
+    return Receipt;
 };
