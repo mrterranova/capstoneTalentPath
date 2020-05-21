@@ -14,23 +14,28 @@ module.exports = (sequelize, DataTypes) => {
                 len : [1-30]
             }
         },
-        image : {
-            type : DataTypes.BLOB, 
-            allowNull: true, 
+        whenCrops_due : {
+            type : DataTypes.DATE, 
+            allowNull : false,
+            default : Date.now()
+        },
+        help_type : {
+            type : DataTypes.TEXT, 
+            allowNull : true, 
             validate : {
-                len : [1-30]
+                len : [1-255]
             }
         },
         product_type : {
             type : DataTypes.STRING, 
-            allowNull: false, 
+            allowNull: true, 
             validate : {
                 len : [1-30]
             }
         },
          when_posted: {
             type : DataTypes.DATE, 
-            allowNull: false, 
+            allowNull: true, 
             default: Date.now()
         }, 
         amount : {
