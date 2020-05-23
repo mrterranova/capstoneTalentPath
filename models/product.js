@@ -58,11 +58,16 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 len: [1 - 255]
             }
+        }, 
+        charity_donation : {
+            type: DataTypes.BOOLEAN, 
+            allowNull : false
         }
     });
     Product.associate = models => {
         Product.belongsTo(models.Farmer, {
             foreignKey: {
+                as: "products",
                 allowNull: false
             }
         });

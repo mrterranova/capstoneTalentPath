@@ -3,14 +3,10 @@ var db = require("../models");
 
 //get all applications
 module.exports = app => {
-    app.get("/api/receipts", (req, res) => {
+    app.get("/api/receipt", (req, res) => {
         var query = {};
-        // if (req.query.dealer_id) {
-        //     query.dealerId = req.query.dealer_id;
-        // }
         db.Receipt.findAll({
-            where: query,
-            include: [db.Donator]
+            where: query
         }).then(dbReceipt => {
             res.json(dbReceipt);
         });
@@ -22,24 +18,20 @@ module.exports = app => {
 
             where : {
                 id : req.params.id
-            }, include : [db.Donator]
+            }
         }).then (dbReceipt => {
             res.json(dbReceipt);
         });
     });
     
     //post applications
-    app.post("/api/receipts", (req,res) => {
-
-        //created object to insert passport id into dealerId field 
-        db.Receipt.create({
-            
-        }).then(dbReceipt => {
+    app.post("/api/receipt", (req,res) => {
+        db.Receipt.create(req.body).then(dbReceipt => {
             res.json(dbReceipt);
         });
 
         //allows update function for member of id
-        app.put("/api/receipts/:id", (req, res) => {
+        app.put("/api/receipt/:id", (req, res) => {
             db.Receipt.update(
                 req.body, {
                 where: { 
@@ -53,7 +45,7 @@ module.exports = app => {
 
         
         //allows only member of id to delete the form
-        app.delete("/api/receipts/:id", (req, res) => {
+        app.delete("/api/receipt/:id", (req, res) => {
             db.Receipt.destroy({
                 where: {
                     donatorId: req.donator.id,

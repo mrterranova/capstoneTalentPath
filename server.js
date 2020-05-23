@@ -6,7 +6,7 @@ var passport = require("./config/passport");
 
 //setting up express app
 const app = express();
-let PORT = process.env.PORT || 5000;
+let PORT = process.env.PORT || 4956;
 
 //importing databases from models
 let db = require("./models");
@@ -23,9 +23,8 @@ app.use(passport.session());
 
 //      Routes
 //====================
-require("./routes/passport-routes.js")(app);
-require("./routes/donator-routes.js")(app);
 require("./routes/farmer-routes.js")(app);
+require("./routes/user-routes.js")(app);
 require("./routes/product-routes.js")(app);
 require("./routes/receipt-routes.js")(app)
 
@@ -33,6 +32,6 @@ require("./routes/receipt-routes.js")(app)
 
 db.sequelize.sync({force: true}).then( function() {
     app.listen(PORT, function() {
-        console.log("==> 🌎 App listening on PORT "+ PORT);
+        console.log(PORT);
     });
 });

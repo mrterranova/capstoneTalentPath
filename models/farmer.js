@@ -32,6 +32,10 @@ module.exports = function(sequelize, DataTypes) {
                 len : [1-20]
             }
         },
+        amount_requested : {
+            type : DataTypes.DOUBLE, 
+            allowNull: false, 
+        },
         address : {
             type : DataTypes.STRING,
             allowNull : false,
@@ -52,37 +56,23 @@ module.exports = function(sequelize, DataTypes) {
             validate : {
                 len : [4-10]
             }
-        },
-        email : {
-            type : DataTypes.STRING,
-            allowNull : false,
-            validate : {
-                isEmail: true,
-
-            }
-        }, 
-        hashed_password : {
-            type : DataTypes.STRING, 
-            allowNull: false, 
-            validate : {
-                
-            }
         }
     });
-
-    Farmer.prototype.validPassword = function(password) {
-        return bcrypt.compareSync(password, this.password);
-      };
-      // Hooks are automatic methods that run during various phases of the User Model lifecycle
-      // In this case, before a User is created, we will automatically hash their password
-      Farmer.addHook("beforeCreate", function(user) {
-        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-      });
 
       Farmer.associate = function(models) {
         Farmer.hasMany(models.Product, {
              onDelete:"Cascade" 
            });
+        Farmer.belongsTo(models.User, {
+            foreignKey : {
+              allowNull : true
+            }, onDelete: "Cascade",
+            constraints: false
+          });
+          Farmer.hasMany(models.Message, {
+            onDelete:"Cascade" 
+          });
         }
+
     return Farmer;
 }

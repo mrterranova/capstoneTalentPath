@@ -1,55 +1,65 @@
-//importing files
-// var db = require("../models");
+//requiring dependencies
+var db = require("../models");
 
-// module.exports = router => {
+//get all applications
+module.exports = app => {
+    app.get("/api/produce", (req, res) => {
+        var query = {};
+        // if (req.query.dealer_id) {
+        //     query.dealerId = req.query.dealer_id;
+        // }
+        db.Application.findAll({
+            where: query,
+            include: [db.Donator]
+        }).then(dbProduct => {
+            res.json(dbProduct);
+        });
+    });
 
-//     //get all contacts
-//     router.get("/api/produce", (req,res) => {
-//         db.Farmer.findAll({
-//             include : [db.Product, db.Farmer]
-//         }).then (dbProduce => {
-//             res.json(dbProduce);
-//         });
-//     });
+    //get application by application id
+    app.get("/api/produce/:id", (req,res) => {
+        db.Product.findOne({
 
-//     //get contacts by id - primary function in passport attached to login info
-//     router.get("/api/produce/:id", (req,res) => {
-//         db.Farmer.findOne({
-//             where : {
-//                 id : req.user.id
-//             }, include : [db.Product, db.Farmer]
-//         }).then (dbProduce => {
-//             res.json(dbProduce);
-//         });
-//     });
+            where : {
+                id : req.params.id
+            }, include : [db.Donator]
+        }).then (dbProduct => {
+            res.json(dbProduct);
+        });
+    });
+    
+    //post applications
+    app.post("/api/produce", (req,res) => {
 
-//     //ability to make contact information
-//     router.post("/api/produce", (req, res) => {
-//         db.Farmer.create(req.body).then(dbProduce => {
-//             res.json(dbProduce);
-//         });
-//     });
+        //created object to insert passport id into dealerId field 
+        db.Product.create({
 
-//     //ability to change contact information
-//     router.put("/api/produce/:id", (req, res)=> {
-//         db.Farmer.update(req.body, {
-//             where: {
-//                 id: req.user.id
-//             }
-//         }).then(dbProduce => {
-//             res.json(dbProduce);
-//         });
-//     });
+        }).then(dbProduct => {
+            res.json(dbProduct);
+        });
 
-//     //ability to delete contact information
-//     router.delete("/api/contact/:id", (req,res) => {
-//         db.dealer.destroy({
-//             where: {
-//                 id: req.user.id
-//             }
-//         }).then(dbdealer => {
-//             res.json(dbdealer)
-//         });
-//     });
+        //allows update function for member of id
+        app.put("/api/produce/:id", (req, res) => {
+            db.Product.update(
+                req.body, {
+                where: { id: req.params.id, 
+                    farmerId : req.user.id}
+            }).then(dbProduct => {
+                res.json(dbProduct);
+            });
+        });
 
-// };
+        
+        //allows only member of id to delete the form
+        app.delete("/api/produce/:id", (req, res) => {
+            db.Product.destroy({
+                where: {
+                    donatorId: req.user.id,
+                    id: req.params.id
+                  }
+            }).then(dbProduct => {
+                res.json(dbProduct)
+            });
+        })
+    });
+}
