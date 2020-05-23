@@ -4,6 +4,7 @@
   "description": "A Boilerplate for React_Redux projects with a mySQL backend.",
   "main": "server.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "bcrypt": "^4.0.1",
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
