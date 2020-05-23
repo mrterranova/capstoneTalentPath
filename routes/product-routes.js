@@ -8,10 +8,7 @@ module.exports = app => {
         // if (req.query.dealer_id) {
         //     query.dealerId = req.query.dealer_id;
         // }
-        db.Application.findAll({
-            where: query,
-            include: [db.Donator]
-        }).then(dbProduct => {
+        db.Product.findAll({}).then(dbProduct => {
             res.json(dbProduct);
         });
     });
@@ -19,10 +16,9 @@ module.exports = app => {
     //get application by application id
     app.get("/api/produce/:id", (req,res) => {
         db.Product.findOne({
-
             where : {
                 id : req.params.id
-            }, include : [db.Donator]
+            }
         }).then (dbProduct => {
             res.json(dbProduct);
         });
@@ -30,11 +26,8 @@ module.exports = app => {
     
     //post applications
     app.post("/api/produce", (req,res) => {
-
         //created object to insert passport id into dealerId field 
-        db.Product.create({
-
-        }).then(dbProduct => {
+        db.Product.create(req.body).then(dbProduct => {
             res.json(dbProduct);
         });
 
@@ -43,7 +36,7 @@ module.exports = app => {
             db.Product.update(
                 req.body, {
                 where: { id: req.params.id, 
-                    farmerId : req.user.id}
+                    FarmerId : req.user.id}
             }).then(dbProduct => {
                 res.json(dbProduct);
             });
@@ -54,7 +47,7 @@ module.exports = app => {
         app.delete("/api/produce/:id", (req, res) => {
             db.Product.destroy({
                 where: {
-                    donatorId: req.user.id,
+                    FarmerId: req.user.id,
                     id: req.params.id
                   }
             }).then(dbProduct => {

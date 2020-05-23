@@ -35,8 +35,7 @@ module.exports = app => {
             db.Receipt.update(
                 req.body, {
                 where: { 
-                    id: req.params.id, 
-                    donatorId : req.user.id
+                    id: req.params.id
                 }
             }).then(dbReceipt => {
                 res.json(dbReceipt);
@@ -48,7 +47,6 @@ module.exports = app => {
         app.delete("/api/receipt/:id", (req, res) => {
             db.Receipt.destroy({
                 where: {
-                    donatorId: req.donator.id,
                     id: req.params.id
                   }
             }).then(dbReceipt => {
