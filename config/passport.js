@@ -1,18 +1,16 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
-var GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
 
 var db = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
-passport.use( 'local-signup', new LocalStrategy(
+passport.use(new LocalStrategy(
+  // Our user will sign in using an email, rather than a "username"
   {
-    usernameField: "email", 
-    passwordField: "password", 
-    passReqToCallback : true
+    usernameField: "email"
   },
-  function(req, email, password, done) {
-    // When a user tries to sign in this code runs\\
+  function(email, password, done) {
+    // When a user tries to sign in this code runs
     db.User.findOne({
       where: {
         email: email
@@ -35,18 +33,6 @@ passport.use( 'local-signup', new LocalStrategy(
     });
   }
 ));
-
-// passport.use(new GoogleStrategy({
-//   consumerKey: GOOGLE_CONSUMER_KEY,
-//   consumerSecret: GOOGLE_CONSUMER_SECRET,
-//   callbackURL: "http://www.example.com/auth/google/callback"
-// },
-// function(token, tokenSecret, profile, done) {
-//     User.findOrCreate({ googleId: profile.id }, function (err, user) {
-//       return done(err, user);
-//     });
-// }
-// ));
 
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the user
