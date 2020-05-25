@@ -5,13 +5,6 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             default: Date.now()
         },
-        help_type: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-            validate: {
-                len: [1 - 255]
-            }
-        },
         product_type: {
             type: DataTypes.STRING,
             allowNull: true,

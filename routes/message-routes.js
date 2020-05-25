@@ -14,8 +14,7 @@ module.exports = app => {
     app.get("/api/message/:id", (req, res) => {
         db.Message.findOne({
             where: {
-                id: req.params.id, 
-                FarmerId : req.user.id
+                id: req.params.id
             }
         }).then(dbProduct => {
             res.json(dbProduct);
