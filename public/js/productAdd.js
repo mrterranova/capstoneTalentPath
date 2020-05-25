@@ -20,8 +20,24 @@ $(document).ready(function () {
                 FarmerId: data.id
             }).then(function (data1) {
                 alert("You have added a new product")
-                window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+                // window.location.replace("/members");
+                var charity;
+                if(charityVal){
+                    charity = $("#amount").val().trim() + data.charity
+                } else {
+                    industry = $("amount").val().trim()+ data.industry
+                }
+                $.ajax({
+                    method: 'PUT', 
+                    url: '/api/farm/'+data.id, 
+                    data: {
+                        FarmerId: data.id,
+                        charity : charity,
+                        industry: industry
+                    }
+                })
             })
+            console.log(data)
         })
     })
 })

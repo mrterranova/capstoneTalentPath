@@ -6,6 +6,37 @@ $(document).ready(function() {
     $.get("/api/farm/"+ usernum).then(data1 => {
 
       console.log(data1.Products)
+      $("#charity-amount").html(data1.charity);
+      $("#non-charity-amount").html(data1.industry);
+
+      $("#change-ch").on("click", function(data){
+        var newAmount = $("#ch-new").val().trim();
+
+        $.ajax({
+          method : 'PUT',
+          url: '/api/farm/'+usernum,
+          data: {
+            charity: newAmount
+          }
+        }).then(function(datac){
+          window.location.replace("/members");
+        })
+      })
+
+      $("#change-not").on("click", function(data){
+        alert ("You change here industry")
+        var newOther = $("#not-new").val().trim();
+        alert(newOther)
+        $.ajax({
+          method : 'PUT',
+          url: '/api/farm/'+usernum,
+          data: {
+            industry: parseInt(newOther)
+          }
+        }).then(function(datan){
+          window.location.replace("/members");
+        })
+      })
 
       for(let i = 0; i < data1.Products.length; i++){
         $("#product-list").prepend("<button id='delete' data-id='"+data1.Products[i].id+"'>DELETE</button><br><br>")
@@ -32,10 +63,12 @@ $(document).ready(function() {
         }
       }).then(function(data){
         window.location.replace(window.location.pathname + window.location.search + window.location.hash);
-
       })
     })
     
+
+
+
 
 
 

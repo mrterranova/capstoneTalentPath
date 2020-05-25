@@ -17,7 +17,7 @@ module.exports = router => {
     router.get("/api/farm/:id", (req,res) => {
         db.Farmer.findOne({
             where : {
-                id : req.user.id
+                id : req.params.id
             }, include : [db.Product]
         }).then (dbFarmer => {
             res.json(dbFarmer);
@@ -36,7 +36,7 @@ module.exports = router => {
     router.put("/api/farm/:id", (req, res)=> {
         db.Farmer.update(req.body, {
             where: {
-                id: req.user.id
+                id: req.params.id
             }
         }).then(dbFarmer => {
             res.json(dbFarmer);

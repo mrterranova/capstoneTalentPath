@@ -54,6 +54,7 @@ body{
     border: 1px solid black;
     padding: 20px;
     text-align: center;
+    height: 300px;
 }
 .charity {
     float:left;
@@ -74,15 +75,11 @@ body{
     text-align: center;
     color:navy;
 }
-.product{
-    float: left;
-    margin-right: 30px;
-}
-.due{
-    float: left;
-}
 .amount {
     text-align: center;
     font-size: larger;
     color: red;
+}
+.section {
+    width:100%;
 }

@@ -60,11 +60,11 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         charity:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull:true
         },
         industry:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull:true
         }
     });
