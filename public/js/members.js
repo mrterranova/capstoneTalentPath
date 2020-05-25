@@ -4,8 +4,45 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     let usernum = data.id.toString();
     $.get("/api/farm/"+ usernum).then(data1 => {
-      $(".member-name").text(data1.first_name);
-      
+
+      console.log(data1.Products)
+
+      for(let i = 0; i < data1.Products.length; i++){
+        $("#product-list").prepend("<button id='delete' data-id='"+data1.Products[i].id+"'>DELETE</button><br><br>")
+        if(data1.Products[i].charity ){
+        $("#product-list").prepend("Charity: Donation to charity <br>")
+        } else {
+          $("#product-list").prepend("Charity: Donation for industry <br>")
+        }
+        $("#product-list").prepend("Date Due: " + data1.Products[i].whenCrops_due+ "<br>")
+        $("#product-list").prepend("Product Type: " + data1.Products[i].product_type + "<br>")
+        $("#product-list").prepend("Product: " + data1.Products[i].product+"<br>")
+    }
+     
+
+    $(document).on("click", "#delete", function() {
+      alert("pushed")
+      var variable = $(this).data("id")
+      console.log(variable)
+      $.ajax({
+        method: 'DELETE',
+        url: "/api/produce/"+variable,
+        data: {
+          FarmerId : usernum
+        }
+      }).then(function(data){
+        window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+
+      })
+    })
+    
+
+
+
+
+
+
+
       $(".fName").append(data1.first_name);
       $(".lName").append(data1.last_name);
       $(".fType").append(data1.farm_type);
@@ -14,6 +51,8 @@ $(document).ready(function() {
       $(".fCity").append(data1.city);
       $(".fState").append(data1.state);
       $(".fZip").append(data1.zip);
+
+
 
        // When the signup button is clicked, we validate the email and password are not blank
   $("#editButton").on("click", function(event) {
@@ -80,7 +119,7 @@ $(document).ready(function() {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password) {
-      $.put("/api/farm", userData).then(function(data) {
+      $.post("/api/farm", userData).then(function(data) {
         alert("You made it through the second promise")
         window.location.replace("/members");
       })

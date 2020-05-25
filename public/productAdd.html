@@ -33,6 +33,10 @@
         <input name="type" id="type" type="text">
         </div> 
         <div class="form-group">
+          <label for="type">Categorize product:</label><br/>
+          <input name="type" id="category" type="text">
+          </div> 
+        <div class="form-group">
         <label for="dueDate">When product is due: </label><br/>
         <input name="dueDate" type="date" id="due-date">
         </div> 
@@ -41,15 +45,13 @@
         <input name="amount" type="number" id="amount">
         </div>
         <div class="form-group">
-        <label for="charity">Will excess product be sent to a charity: </label><br/>
-        <input name="charity" type="radio" id="charity-yes">For Charity?
-        <br/>
-        <input name="charity" type="radio" id="charity-no">For Industry?
+        <label for="charity">Will excess product be sent to a charity: </label>
+        <input type="checkbox" id="myCheck" name="donate" value="true">
         </div>
         <div class="form-group">
-        <label for="help">Any needed assistance:</label><br/>
-        <textarea name="help" id="help"
-            placeholder="Assistance explanation here to request donators with background in agriculture to aid farm."></textarea>
+        <!-- <label for="help">Any needed assistance:</label><br/> -->
+        <!-- <textarea name="help" id="help"
+            placeholder="Assistance explanation here to request donators with background in agriculture to aid farm."></textarea> -->
             </div> 
             <button type="submit" class="btn btn-default" id="formSub">Submit Form</button>
     </form>

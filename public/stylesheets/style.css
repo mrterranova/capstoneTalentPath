@@ -71,3 +71,8 @@ h2 {
 #delete {
   float: right;
 }
+#add {
+  position: absolute;
+  margin-left: 88%;
+  margin-top: 200px;
+}

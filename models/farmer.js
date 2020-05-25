@@ -58,16 +58,18 @@ module.exports = function(sequelize, DataTypes) {
             validate : {
                 len : [4-10]
             }
+        },
+        charity:{
+            type: DataTypes.INTEGER,
+            allowNull:true
+        },
+        industry:{
+            type: DataTypes.INTEGER,
+            allowNull:true
         }
     });
 
       Farmer.associate = function(models) {
-        Farmer.belongsTo(models.User, {
-            foreignKey : {
-              allowNull : true
-            }, onDelete: "Cascade",
-            constraints: false
-          });
           Farmer.hasMany(models.Message, {
             onDelete:"Cascade" 
           });

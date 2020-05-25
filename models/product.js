@@ -5,6 +5,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             default: Date.now()
         },
+        product: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [1 - 30]
+            }
+        },
         product_type: {
             type: DataTypes.STRING,
             allowNull: true,

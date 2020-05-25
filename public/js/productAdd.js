@@ -1,23 +1,27 @@
-console.log("You are connected")
-$("#formSub").on("click", event => {
-    alert("in general")
-    $.get("/api/user_data").then(function (data) {
-        let charChoice = "";
-        if ($("charity-yes").val().trim() != ""){
-            charChoice = true
-        } else {
-            charChoice = false
-        }
+$(document).ready(function () {
 
+    console.log("You are connected")
+    $("#formSub").on("click", event => {
+        $.get("/api/user_data").then(function (data) {
+            var charityVal = "";
+            var checkbox = document.getElementById('myCheck');
+            if (checkbox.checked != true){
+                charityVal = 0;
+            } else {
+                charityVal = 1;
+            }
 
-        $.post("/api/produce", {
-            whenCrops_due: $("due-date").val().trim(),
-            product_type : $("type").val().trim(),
-            amount : $("amount").val().trim(),
-            charity : charChoice,
-            FarmerId : data.id
-     }).then(function(data1){
-         console.log("completed")
-     })
+            $.post("/api/produce", {
+                whenCrops_due: $("#due-date").val().trim(),
+                product: $("#category").val().trim(),
+                product_type: $("#type").val().trim(),
+                amount: $("#amount").val().trim(),
+                charity: charityVal,
+                FarmerId: data.id
+            }).then(function (data1) {
+                alert("You have added a new product")
+                window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+            })
+        })
     })
 })
