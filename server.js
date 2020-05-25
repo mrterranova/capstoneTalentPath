@@ -1,37 +1,34 @@
-//Dependencies
-const express = require("express");
+// Requiring necessary npm packages
+var express = require("express");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
-//setting up express app
-const app = express();
-let PORT = process.env.PORT || 4956;
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 8999;
+var db = require("./models");
 
-//importing databases from models
-let db = require("./models");
-
-//setting up express app to handle data
-app.use(express.urlencoded({extended: true}));
+// Creating express app and configuring middleware needed for authentication
+var app = express();
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-//static directory
 app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-//      Routes
-//====================
-require("./routes/farmer-routes.js")(app);
-require("./routes/user-routes.js")(app);
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+require("./routes/farm-routes.js")(app);
 require("./routes/product-routes.js")(app);
-require("./routes/receipt-routes.js")(app)
+require("./routes/message-routes.js")(app);
+require("./routes/receipt-routes.js")(app);
 
-//syncing sequelize models and starting express app
-
-db.sequelize.sync({force: true}).then( function() {
-    app.listen(PORT, function() {
-        console.log(PORT);
-    });
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  });
 });

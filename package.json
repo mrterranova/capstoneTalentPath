@@ -1,43 +1,24 @@
 {
-  "name": "react_sql_boilerplate",
+  "name": "1-Passport-Example",
   "version": "1.0.0",
-  "description": "A Boilerplate for React_Redux projects with a mySQL backend.",
+  "description": "",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
-    "bcrypt": "^4.0.1",
-    "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.2.0",
-    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "nodemon": "^2.0.4",
+    "mysql2": "^1.7.0",
     "passport": "^0.4.1",
-    "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
-    "passport-local-roles": "^1.0.1",
     "sequelize": "^5.21.10"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js",
-    "client": "cd client && npm start",
-    "client-install": "cd client && npm install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gengandrew/React_SQL_Boilerplate.git"
-  },
-  "author": "Andrew Geng",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gengandrew/React_SQL_Boilerplate/issues"
-  },
-  "homepage": "https://github.com/gengandrew/React_SQL_Boilerplate#readme"
+  }
 }

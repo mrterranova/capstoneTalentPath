@@ -1,0 +1,88 @@
+.produce-tables {
+    height: 700px;
+    margin-top: 30px;
+    overflow: auto;
+}
+footer {
+    text-align: center;
+    color: white;
+}
+h2 {
+    text-align: center;
+}
+body{
+    background-image: url("../images/veggies.jpg");
+    background-size: cover;
+    color: black;
+}
+.backdrop{
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    background-color: whitesmoke;
+    opacity: .8;
+    position: absolute;
+    z-index: 1;
+}
+.searchField{
+    float: right;
+}
+.login {
+    right: 0;
+    margin-right: 10px;
+    position: absolute;
+    z-index: 1;
+}
+.buttons{
+    float: right;
+}
+.newInsert {
+    background-color: whitesmoke;
+    margin-top: 20px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid black;
+    padding: 20px;
+}
+.farm {
+    font-size: 20px;
+    text-align: center;
+}
+.details {
+    float: left;
+    width: 20%;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+}
+.charity {
+    float:left;
+    width: 40%;
+    padding:0 0 0 20px;
+    border-bottom: 1px solid black;
+    
+}
+.not-charity {
+    float: left;
+    width: 40%;
+    padding:0 0 0 20px;
+    border-bottom: 1px solid black;
+}
+.additional{
+    margin-top: 20px;
+    height:50px;
+    text-align: center;
+    color:navy;
+}
+.product{
+    float: left;
+    margin-right: 30px;
+}
+.due{
+    float: left;
+}
+.amount {
+    text-align: center;
+    font-size: larger;
+    color: red;
+}

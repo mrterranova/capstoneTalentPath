@@ -28,13 +28,6 @@ module.exports = (sequelize, DataTypes) => {
                 isEmail: true
             }
         },
-        zip : {
-            type : DataTypes.INTEGER, 
-            allowNull : false,
-            validate : {
-                len : [5-10]
-            }
-        },
         message : {
             type : DataTypes.TEXT, 
             allowNull : false, 
@@ -46,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     Message.associate = models => {
         Message.belongsTo(models.Farmer, {
             foreignKey: {
-                as: "products",
+                as: "Message",
                 allowNull: false
             }
         });

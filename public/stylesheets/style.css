@@ -1,0 +1,73 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+input{
+  width:100%;
+}
+textarea{
+  width:100%;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+}
+h2 {
+  text-align: center;
+}
+.display-name {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.product-box{
+  margin-top: 70px;
+  height: 200px;
+  width: 100%;
+  border: 1px solid black;
+  overflow: auto;
+}
+.message-box{
+  height: 300px;
+  width: 85%;
+  background-color: burlywood;
+  float: left;
+  padding: 15px;
+  overflow: auto;
+}
+.contains-donations{
+  height: 300px;
+  width:15%;
+  border: 1px solid black;
+  float: left;
+}
+.product-buttons{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 145px;
+  margin-right:10px;
+}
+.login {
+  right: 0;
+  margin-right: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.buttons{
+  float: right;
+  margin-right: 10px;
+}
+.donationNonCharity-box{
+  height:50%;
+  width:100%;
+}
+.donationCharity-box{
+  height: 50%;
+  width:100%;
+}
+#delete {
+  float: right;
+}

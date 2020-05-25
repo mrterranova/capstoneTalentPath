@@ -1,36 +1,35 @@
 //requiring dependencies
 var db = require("../models");
 
-//get all messages
+//get all produce
 module.exports = app => {
     app.get("/api/message", (req, res) => {
         var query = {};
-        db.Message.findAll({}).then(dbMessage => {
-            res.json(dbMessage);
+        db.Message.findAll({}).then(dbProduct => {
+            res.json(dbProduct);
         });
     });
 
-    //get message
+    //get produce
     app.get("/api/message/:id", (req, res) => {
         db.Message.findOne({
             where: {
-                id: req.params.id
+                id: req.params.id, 
+                FarmerId : req.user.id
             }
-        }).then(dbMessage => {
-            res.json(dbMessage);
+        }).then(dbProduct => {
+            res.json(dbProduct);
         });
     });
 
-    //post message
+    //post produce
     app.post("/api/message", (req, res) => {
-        db.Message.create(
-            req.body
-        ).then(dbMessage => {
-            res.json(dbMessage);
+        db.Message.create(req.body).then(dbProduct => {
+            res.json(dbProduct);
         });
     });
 
-    //allows update message
+    //allows update produce
     app.put("/api/message/:id", (req, res) => {
         db.Message.update(
             req.body, {
@@ -38,21 +37,21 @@ module.exports = app => {
                 id: req.params.id,
                 FarmerId: req.user.id
             }
-        }).then(dbMessage => {
-            res.json(dbMessage);
+        }).then(dbProduct => {
+            res.json(dbProduct);
         });
     });
 
 
-    //allows message deleted
+    //allows delete produce
     app.delete("/api/message/:id", (req, res) => {
         db.Message.destroy({
             where: {
                 FarmerId: req.user.id,
                 id: req.params.id
             }
-        }).then(dbMessage => {
-            res.json(dbMessage)
+        }).then(dbProduct => {
+            res.json(dbProduct)
         });
     })
 }

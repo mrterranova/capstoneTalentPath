@@ -4,6 +4,7 @@ module.exports = router => {
 
     //get all farmers
     router.get("/api/farm", (req,res) => {
+        console.log("You are in farmer get")
         db.Farmer.findAll({
             include : [db.Product]
         }).then (dbFarmer => {
@@ -25,6 +26,7 @@ module.exports = router => {
 
     //post farmer
     router.post("/api/farm", (req, res) => {
+        console.log("you are posting farmer")
         console.log(req.body)
         db.Farmer.create(req.body).then(dbFarmer => {
             res.json(dbFarmer);

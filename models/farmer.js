@@ -1,7 +1,6 @@
 // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
 var bcrypt = require("bcryptjs");
 // Creating our User model
-console.log("FARMER");
 module.exports = function(sequelize, DataTypes) {
     var Farmer = sequelize.define("Farmer", {
         first_name: {
@@ -32,10 +31,6 @@ module.exports = function(sequelize, DataTypes) {
                 len : [1-20]
             }
         },
-        amount_requested : {
-            type : DataTypes.DOUBLE, 
-            allowNull: false, 
-        },
         address : {
             type : DataTypes.STRING,
             allowNull : false,
@@ -50,6 +45,13 @@ module.exports = function(sequelize, DataTypes) {
                 len : [1-30]
             }
         },
+        state : {
+            type : DataTypes.STRING, 
+            allowNull : false, 
+            validate : {
+                len : [1-20]
+            }
+        },
         zip : {
             type : DataTypes.INTEGER,
             allowNull : false,
@@ -60,9 +62,6 @@ module.exports = function(sequelize, DataTypes) {
     });
 
       Farmer.associate = function(models) {
-        Farmer.hasMany(models.Product, {
-             onDelete:"Cascade" 
-           });
         Farmer.belongsTo(models.User, {
             foreignKey : {
               allowNull : true
@@ -72,6 +71,9 @@ module.exports = function(sequelize, DataTypes) {
           Farmer.hasMany(models.Message, {
             onDelete:"Cascade" 
           });
+        Farmer.hasMany(models.Product, {
+             onDelete:"Cascade" 
+           });
         }
 
     return Farmer;

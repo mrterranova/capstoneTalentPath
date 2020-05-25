@@ -1,26 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
     let Product = sequelize.define("Product", {
-        last_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1 - 20]
-            }
-        },
-        location: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1 - 30]
-            }
-        },
-        zip: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [4 - 10]
-            }
-        },
         whenCrops_due: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -40,11 +19,6 @@ module.exports = (sequelize, DataTypes) => {
                 len: [1 - 30]
             }
         },
-        when_posted: {
-            type: DataTypes.DATE,
-            allowNull: true,
-            default: Date.now()
-        },
         amount: {
             type: DataTypes.DOUBLE,
             allowNull: false,
@@ -52,14 +26,7 @@ module.exports = (sequelize, DataTypes) => {
                 len: [1 - 8]
             }
         },
-        additional_notes: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-            validate: {
-                len: [1 - 255]
-            }
-        }, 
-        charity_donation : {
+        charity : {
             type: DataTypes.BOOLEAN, 
             allowNull : false
         }

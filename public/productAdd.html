@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <title></title>
+
+</head>
+
+<body>
+    <div class="login">
+        <div class="buttons">
+         <a href="/members"><button id="login">Home</button></a>
+         </div>
+     </div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+    <h2>Please add a new product here:</h2>
+    <br />
+    <form class=signup>
+        <div class="form-group">
+        <label for="type">What is the excess product:</label><br/>
+        <input name="type" id="type" type="text">
+        </div> 
+        <div class="form-group">
+        <label for="dueDate">When product is due: </label><br/>
+        <input name="dueDate" type="date" id="due-date">
+        </div> 
+        <div class="form-group">
+        <label for="amount">Estimated Cost for product: (please round to nearest dollar) </label><br/>
+        <input name="amount" type="number" id="amount">
+        </div>
+        <div class="form-group">
+        <label for="charity">Will excess product be sent to a charity: </label><br/>
+        <input name="charity" type="radio" id="charity-yes">For Charity?
+        <br/>
+        <input name="charity" type="radio" id="charity-no">For Industry?
+        </div>
+        <div class="form-group">
+        <label for="help">Any needed assistance:</label><br/>
+        <textarea name="help" id="help"
+            placeholder="Assistance explanation here to request donators with background in agriculture to aid farm."></textarea>
+            </div> 
+            <button type="submit" class="btn btn-default">Submit Form</button>
+    </form>
+    <br />
+</div>
+</div>
+</div>
+</body>
+
+</html>

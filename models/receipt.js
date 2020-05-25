@@ -21,13 +21,14 @@ module.exports = (sequelize, DataTypes) => {
                 isEmail: true
             }
         }, 
-        amount : {
+        amount_charity: {
             type : DataTypes.DOUBLE, 
-            allowNull : false, 
-            validate : {
-                len : [1-8]
-            }
+            allowNull : true, 
         }, 
+        amount_notCharity: {
+            type: DataTypes.DOUBLE,
+            allowNull : true,
+        },
         donation_to : {
             type : DataTypes.STRING,
             allowNull : false,

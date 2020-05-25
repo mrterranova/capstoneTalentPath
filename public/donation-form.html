@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/home.css" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <h2>Donation Form</h2>
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form class="signup">
+          <div class="form-group">
+            <label>First Name</label><br>
+            <input type="text" name="fName" id="fname">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label><br>
+            <input type="text" name="lName" id="lname">
+          </div>
+          <div class="form-group">
+            <label>email</label><br>
+            <input type="email">
+          </div>
+
+          <div class="form-group">
+            <div class="charity">Donations to Charity Amount: <span style="color:red" id="charity-here"></span></div>
+            <label>Donation</label><br>
+            <input type="number" name="amount" id="amount-ch">
+          </div>
+          <div class="form-group">
+            <div class="charity">Donations to Industry Amount: <span style="color:red" id="not-here"></span></div>
+            <label>Donation</label><br>
+            <input type="number" name="amount" id="amount-not">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
