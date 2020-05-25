@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password":"docker",
-    "database": "donations",
-    "host": "127.0.0.1",
+    "username": "jhagvm00jkfstfr7",
+    "password":"yuzwfk4xo0vqviww",
+    "database": "wfgccgtto41nl28f",
+    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "jhagvm00jkfstfr7",
+    "password":"yuzwfk4xo0vqviww",
+    "database": "wfgccgtto41nl28f",
+    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
