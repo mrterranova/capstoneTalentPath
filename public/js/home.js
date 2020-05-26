@@ -24,7 +24,7 @@ newFarmer += '<div class="newInsert">'+
                         for( let i=0; i<element.Products.length; i++){
                            newFarmer +=  'Product: '+element.Products[i].product + '<br>'+
                             'Type of Product: '+ element.Products[i].product_type + '<br>'+
-                            'Amount for Product: '+ element.Products[i].donation + '<br>'+
+                            'Amount for Product: '+ element.Products[i].amount + '<br>'+
                             'When Product Due: '+ element.Products[i].whenCrops_due + '<br>'+
                             'Charity Product Being Sent To: ' + element.Products[i].donation + '<br>'+
                             'Date Posted: '+ element.Products[i].createdAt+ '<br><br>'

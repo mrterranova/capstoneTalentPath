@@ -15,13 +15,11 @@ $(document).ready(function() {
 
   // When the signup button is clicked, we validate the email and password are not blank
   $("#submit").on("click", function(event) {
-    alert("You are in the form submitting")
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(), 
     };
-    alert(cityInput)
     var farmerData = {
       first_name : firstNameInput.val(),
       last_name : lastNameInput.val(),
@@ -70,8 +68,8 @@ $(document).ready(function() {
           business_entity : bus
 
         }).then(function(data) {
-          window.location.replace("/members");
-      })
+        })
+        window.location.replace("/members");
         
       })
     })

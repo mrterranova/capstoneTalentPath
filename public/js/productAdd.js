@@ -10,7 +10,6 @@ $(document).ready(function () {
             } else {
                 charityVal = 1;
             }
-            alert($("#donation").val().trim())
             $.post("/api/produce", {    
                 donation : $("#donation").val().trim(),
                 whenCrops_due: $("#due-date").val().trim(),
