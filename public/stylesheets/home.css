@@ -83,3 +83,14 @@ body{
 .section {
     width:100%;
 }
+.aboutDiv {
+    background-color: whitesmoke;
+    margin: 100px;
+    padding: 20px;
+}
+#toMain {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
