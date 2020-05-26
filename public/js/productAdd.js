@@ -10,13 +10,14 @@ $(document).ready(function () {
             } else {
                 charityVal = 1;
             }
-
-            $.post("/api/produce", {
+            alert($("#donation").val().trim())
+            $.post("/api/produce", {    
+                donation : $("#donation").val().trim(),
                 whenCrops_due: $("#due-date").val().trim(),
                 product: $("#category").val().trim(),
                 product_type: $("#type").val().trim(),
                 amount: $("#amount").val().trim(),
-                charity: charityVal,
+                charity: 1,
                 FarmerId: data.id
             }).then(function (data1) {
                 alert("You have added a new product")

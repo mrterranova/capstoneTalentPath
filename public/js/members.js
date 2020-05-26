@@ -43,9 +43,12 @@ $(document).ready(function() {
         } else {
           $("#product-list").prepend("Charity: Donation for industry <br>")
         }
+        $("#product-list").prepend("Being Donated To: " + data1.Products[i].donation+"<br>")
+        $("#product-list").prepend("Cost: $" + data1.Products[i].amount+".00 <br>")
         $("#product-list").prepend("Date Due: " + data1.Products[i].whenCrops_due+ "<br>")
         $("#product-list").prepend("Product Type: " + data1.Products[i].product_type + "<br>")
         $("#product-list").prepend("Product: " + data1.Products[i].product+"<br>")
+        
     }
      
 
