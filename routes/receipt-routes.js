@@ -3,6 +3,7 @@ var db = require("../models");
 
 //get all receipts
 module.exports = app => {
+
     app.get("/api/receipt", (req, res) => {
         var query = {};
         db.Receipt.findAll({

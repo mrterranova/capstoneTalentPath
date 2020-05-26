@@ -1,5 +1,6 @@
 // Requiring necessary npm packages
 var express = require("express");
+var sendMail = require("./routes/mail.js");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
@@ -12,6 +13,15 @@ var db = require("./models");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.post('/email', (req, res)=>{
+  const { email, text } = req.body; 
+  // sendMail(email, text, function(err, data){
+  //     if(err) res.status(500).json({ message: 'Internal Error'})
+  //     else res.json({ message: "Email Sent!!"})
+  // })
+  res.json({message: "Message recieved"})
+})
+
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
@@ -25,6 +35,7 @@ require("./routes/farm-routes.js")(app);
 require("./routes/product-routes.js")(app);
 require("./routes/message-routes.js")(app);
 require("./routes/receipt-routes.js")(app);
+
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {

@@ -12,7 +12,6 @@ module.exports = router => {
         });
     });
 
-    
     //get farmer
     router.get("/api/farm/:id", (req,res) => {
         db.Farmer.findOne({

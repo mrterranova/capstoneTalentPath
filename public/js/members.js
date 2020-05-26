@@ -24,9 +24,7 @@ $(document).ready(function() {
       })
 
       $("#change-not").on("click", function(data){
-        alert ("You change here industry")
         var newOther = $("#not-new").val().trim();
-        alert(newOther)
         $.ajax({
           method : 'PUT',
           url: '/api/farm/'+usernum,

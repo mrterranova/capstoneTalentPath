@@ -10,10 +10,14 @@ module.exports = function(app) {
     // If the user already has an account send them to the members page
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
-  app.get("/message", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/message.html"));
+  // app.get("/message", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/message.html"));
+  // });
+  app.get("/donation/:id", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/donation-form.html"));
   });
-  app.get("/form/donation", function(req, res) {
+  
+  app.get("/donation/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/donation-form.html"));
   });
 

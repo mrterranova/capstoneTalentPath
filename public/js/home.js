@@ -9,7 +9,7 @@ newFarmer = '<div class="newInsert">'+
                 '<div class="details">'+
                     '<div class="name">'+ element.first_name + " "+ element.last_name +'</div>'+
                     '<div class="location">'+ element.address+ "<br>"+ element.city + ", "+ element.state + ", " + element.zip + '</div>'+
-                    '<a href="/form/donation"><button id="donation" data-id='+ element.id +'>DONATE HERE</button></a>'+
+                    '<a href="./donation?farm='+element.id+'"><button id="donation" data-id='+ element.id +'>DONATE HERE</button></a>'+
                 '</div>'+
                     '<div class="section">'+
                     '<div class="charity">'+
