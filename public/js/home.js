@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.get("/api/user_data").then(function(data) {
-        if (data != null){
+        if (data.id){
             $('.buttons').html('<a href="/members"><button id="login">Dashboard</button></a>');
         }
     })
