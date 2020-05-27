@@ -36,8 +36,10 @@ $(document).ready(function () {
                         industry: industry
                     }
                 })
+            }).finally(data =>{
+                console.log(data)
+                window.location.replace("/members");
             })
-            console.log(data)
         })
     })
 })
