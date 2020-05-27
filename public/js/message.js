@@ -41,8 +41,8 @@ $.get("/api/farm/" + FarmerId).then(function (data) {
                     industry: nnewIndustry
                 }
             }).then(data =>{
-                console.log("you have reached this message " + data)
-                console.log(window.location)
+                alert("you have reached this message " + data)
+                alert(window.location)
             })
         window.location.replace("/");
     })
