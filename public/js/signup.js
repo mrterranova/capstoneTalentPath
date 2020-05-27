@@ -65,7 +65,8 @@ $(document).ready(function() {
           city : city, 
           zip : zip, 
           farm_type : type,
-          business_entity : bus
+          business_entity : bus, 
+          email:email
 
         }).then(function(data) {
           window.location.replace("/members");

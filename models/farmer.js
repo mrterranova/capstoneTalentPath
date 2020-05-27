@@ -17,6 +17,10 @@ module.exports = function(sequelize, DataTypes) {
                 len : [1-15]
             }
         },
+        email :{
+            type : DataTypes.STRING, 
+            allowNull : false
+        },
         business_entity : {
             type : DataTypes.STRING,
             allowNull: true,
