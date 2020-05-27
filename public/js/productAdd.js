@@ -11,7 +11,7 @@ $(document).ready(function () {
                 charityVal = 1;
             }
             $.post("/api/produce", {    
-                donation : $("#donation").val().trim(),
+                charity_donation : $("#donation").val().trim(),
                 whenCrops_due: $("#due-date").val().trim(),
                 product: $("#category").val().trim(),
                 product_type: $("#type").val().trim(),
