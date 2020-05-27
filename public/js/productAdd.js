@@ -19,7 +19,6 @@ $(document).ready(function () {
                 charity: 1,
                 FarmerId: data.id
             }).then(function (data1) {
-                alert("You have added a new product")
                 // window.location.replace("/members");
                 var charity;
                 if(charityVal){
@@ -36,11 +35,8 @@ $(document).ready(function () {
                         industry: industry
                     }
                 }).then (data =>{
-                    alert("You are in window: " + window.location)
                 })
-                window.location.replace("/members");
             })
-            alert("Finished!!")
         })
     })
 })

@@ -4,14 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="./stylesheets/style.css" rel="stylesheet">
   <title></title>
 </head>
 
 <body>
   <nav class="navbar navbar-default">
-  <a href="/main"><button style="float: right; margin-right:10px; margin-top: 20px;">Main</button></a>
+    <a class="navbar-brand" href="/main">
+      Main
+    </a>
     <div class="container-fluid">
       <h2>Donation Form</h2>
       <div class="navbar-header">
@@ -36,16 +40,32 @@
           </div>
 
           <div class="form-group">
-            <div class="charity">Donations to Charity Amount: <span style="color:red" id="charity-here"></span></div>
-            <label>Donation</label><br>
+            <label>Donations to Charity Amount:</label><br>
             <input type="number" name="amount" id="amount-ch">
           </div>
           <div class="form-group">
-            <div class="charity">Donations to Industry Amount: <span style="color:red" id="not-here"></span></div>
-            <label>Donation</label><br>
+            <label>Donations to Industry Amount:</label><br>
             <input type="number" name="amount" id="amount-not">
           </div>
-          <button id="submit">SUBMIT</button>
+          <!-- <button id="submit">SUBMIT</button> -->
+          <div class="container">
+            <button type="button" class="btn btn-success" id="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit Donation</button>
+          
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                  <div class="modal-body">
+                    <p>Thank you for your donation! We are appreciative of your support!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="/main"><button type="button" class="btn btn-default">Close</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>

@@ -1,9 +1,10 @@
+
 {
   "development": {
-    "username": "qlc2qmrdus6kayc5",
-    "password":"wfr2vz5kxv1lc844",
-    "database": "nuzfh6p9f1be86td",
-    "host": "g8mh6ge01lu2z3n1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "docker",
+    "database": "donations",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
@@ -21,3 +22,4 @@
     "dialect": "mysql"
   }
 }
+

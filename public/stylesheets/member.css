@@ -4,6 +4,9 @@ form.login {
   margin-left: 10%;
   margin-right: 10%;
 }
+body {
+    background-image: url('../images/20_free_subtle_textures_floral_patterns.jpg');
+}
 input{
   width:100%;
 }
@@ -27,16 +30,18 @@ h2 {
   margin-top: 70px;
   height: 200px;
   width: 100%;
-  border: 1px solid black;
+  border: 3px solid rgb(123, 190, 34);
   overflow: auto;
+  background-color: whitesmoke;
 }
 .message-box{
   height: 300px;
   width: 85%;
-  background-color: burlywood;
+  background-color:  rgb(123, 190, 34);
   float: left;
   padding: 15px;
   overflow: auto;
+  margin-bottom: 70px;
 }
 .contains-donations{
   height: 300px;
@@ -69,7 +74,7 @@ h2 {
   width:100%;
 }
 #delete {
-  float: right;
+  right:0;
 }
 #add {
   position: absolute;
@@ -78,6 +83,19 @@ h2 {
   margin-left: 80%;
   margin-top: 110px;
 }
-.member-container {
-  background-image: url('../images/20_free_subtle_textures_floral_patterns.jpg');
+#add:hover {
+    transition: width 2s;
+    transition: height 2s;
+    width: 58px;
+    height: 58px;
+
+}
+#add:active {
+    transition: width 2s;
+    transition: height 2s;
+    width: 64px;
+    height: 64px;
+}
+#message-area {
+    height: 70px;
 }

@@ -4,10 +4,11 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     let usernum = data.id.toString();
     $.get("/api/farm/"+ usernum).then(data1 => {
-
+      $('.member-name').html(data1.first_name);
       console.log(data1.Products)
       $("#charity-amount").html(data1.charity);
       $("#non-charity-amount").html(data1.industry);
+      $("#message-area").html(data1.message)
 
       $("#change-ch").on("click", function(data){
         var newAmount = $("#ch-new").val().trim();
@@ -20,6 +21,20 @@ $(document).ready(function() {
           }
         }).then(function(datac){
           window.location.replace("/members");
+        })
+      })
+
+      $("#message-area-btn").on("click", data => {
+        $.ajax({
+          method: 'PUT',
+          url: 'api/farm/'+usernum,
+          data: {
+            message : $("#message-area").val().trim()
+          }
+        }).then (data =>{
+          $("#message-action").html('<div class="alert alert-success"><strong>Success!</strong> Your new message has been saved.</div>');
+        }).catch(data =>{
+          $("#message-action").html('<div class="alert alert-warning"><strong>Error!</strong> Sorry, something went wrong with message.</div>');
         })
       })
 
@@ -43,9 +58,10 @@ $(document).ready(function() {
         } else {
           $("#product-list").prepend("Charity: Donation for industry <br>")
         }
-        $("#product-list").prepend("Being Donated To: " + data1.Products[i].donation+"<br>")
+        $("#product-list").prepend("Being Donated To: " + data1.Products[i].charity_donation+"<br>")
         $("#product-list").prepend("Cost: $" + data1.Products[i].amount+".00 <br>")
-        $("#product-list").prepend("Date Due: " + data1.Products[i].whenCrops_due+ "<br>")
+        let cropDate = data1.Products[i].whenCrops_due.split("T");
+        $("#product-list").prepend("Date Due: " + cropDate[0]+ "<br>")
         $("#product-list").prepend("Product Type: " + data1.Products[i].product_type + "<br>")
         $("#product-list").prepend("Product: " + data1.Products[i].product+"<br>")
         
@@ -53,7 +69,6 @@ $(document).ready(function() {
      
 
     $(document).on("click", "#delete", function() {
-      alert("pushed")
       var variable = $(this).data("id")
       console.log(variable)
       $.ajax({
@@ -154,7 +169,6 @@ $(document).ready(function() {
   // Otherwise we log any errors
   function signUpUser(email, password) {
       $.post("/api/farm", userData).then(function(data) {
-        alert("You made it through the second promise")
         window.location.replace("/members");
       })
       .catch(handleLoginErr);

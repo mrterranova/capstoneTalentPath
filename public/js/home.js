@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $.get("/api/user_data").then(function(data) {
         if (data.id){
-            $('.buttons').html('<a href="/members"><button id="login">Dashboard</button></a>');
+            $('.buttons').html('<a class="navbar-brand" href="/members" style="float:right; margin-top:10px;">Profile</a>');
         }
     })
     $.get("/api/farm").then(function(data){
@@ -27,12 +27,16 @@ newFarmer += '<div class="newInsert">'+
                         '</div>'+
                         '<br>';
                         for( let i=0; i<element.Products.length; i++){
+
+                            let createDate = element.Products[i].createdAt.split("T");
+                            let cropDate = element.Products[i].whenCrops_due.split("T");
+                            
                            newFarmer +=  'Product: '+element.Products[i].product + '<br>'+
                             'Type of Product: '+ element.Products[i].product_type + '<br>'+
                             'Amount for Product: '+ element.Products[i].amount + '<br>'+
-                            'When Product Due: '+ element.Products[i].whenCrops_due + '<br>'+
-                            'Charity Product Being Sent To: ' + element.Products[i].donation + '<br>'+
-                            'Date Posted: '+ element.Products[i].createdAt+ '<br><br>'
+                            'When Product Due: '+ cropDate[0] + '<br>'+
+                            'Charity Product Being Sent To: ' + element.Products[i].charity_donation + '<br>'+
+                            'Date Posted: '+ createDate[0]+ '<br><br>'
                         }
                     newFarmer +='</div>'+
                     '</div>'+

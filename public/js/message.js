@@ -29,7 +29,6 @@ $.get("/api/farm/" + FarmerId).then(function (data) {
         }
         // alert("you are in 3")
         // let text = "Thank you " + fname + " " + lname + ", for your gift of " + amountCh + " for produce to be sent to charity and " + amountNot + "towards other farming necessities to Farmer Nationwide Services today!"
-            alert("you have reached here")
             $.ajax({
                 method: 'PUT',
                 url: '/api/farm/' + FarmerId,
@@ -38,9 +37,7 @@ $.get("/api/farm/" + FarmerId).then(function (data) {
                     industry: nnewIndustry
                 }
             }).then(data =>{
-                alert(window.location)
-                alert("you have reached this message " + data)
             })
-        window.location.replace("/");
+        // window.location.replace("/main");
     })
 })
