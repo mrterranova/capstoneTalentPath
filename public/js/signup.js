@@ -68,8 +68,8 @@ $(document).ready(function() {
           business_entity : bus
 
         }).then(function(data) {
+          window.location.replace("/members");
         })
-        window.location.replace("/members");
         
       })
     })
