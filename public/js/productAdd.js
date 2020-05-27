@@ -35,6 +35,8 @@ $(document).ready(function () {
                         charity : charity,
                         industry: industry
                     }
+                }).then (data =>{
+                    console.log("You are in window: " + window.location)
                 })
                 window.location.replace("/members");
             })
