@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    $.get("/api/user_data").then(function(data) {
+        if (data != null){
+            $('.buttons').html('<a href="/members"><button id="login">Dashboard</button></a>');
+        }
+    })
     $.get("/api/farm").then(function(data){
         var newFarmer = ""
         // console.log(dataMore)
