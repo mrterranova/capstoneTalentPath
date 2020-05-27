@@ -66,6 +66,13 @@ module.exports = function(sequelize, DataTypes) {
         industry:{
             type: DataTypes.STRING,
             allowNull:true
+        }, 
+        message: {
+            type: DataTypes.TEXT, 
+            allowNull:true,
+            validate: {
+                len: [1-150]
+            }
         }
     });
 

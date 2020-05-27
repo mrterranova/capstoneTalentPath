@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
         charity : {
             type: DataTypes.BOOLEAN, 
             allowNull : false
+        },
+        charity_donation:{
+            type: DataTypes.STRING, 
+            allowNull : true
         }
     });
     Product.associate = models => {
