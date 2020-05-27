@@ -40,8 +40,7 @@ $.get("/api/farm/" + FarmerId).then(function (data) {
                     charity: nnewCharity,
                     industry: nnewIndustry
                 }
-            }).finally( data =>{
-                window.location.replace("/");
             })
+        window.location.replace("/");
     })
 })

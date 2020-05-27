@@ -35,10 +35,8 @@ $(document).ready(function () {
                         charity : charity,
                         industry: industry
                     }
-                }).finally(data =>{
-                    console.log(data)
-                    window.location.replace("/members");
                 })
+                window.location.replace("/members");
             })
         })
     })
