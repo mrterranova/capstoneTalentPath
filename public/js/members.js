@@ -67,7 +67,6 @@ $(document).ready(function() {
         
     }
      
-
     $(document).on("click", "#delete", function() {
       var variable = $(this).data("id")
       console.log(variable)
@@ -81,16 +80,6 @@ $(document).ready(function() {
         window.location.replace(window.location.pathname + window.location.search + window.location.hash);
       })
     })
-    
-
-
-
-
-
-
-
-
-
 
       $(".fName").append(data1.first_name);
       $(".lName").append(data1.last_name);

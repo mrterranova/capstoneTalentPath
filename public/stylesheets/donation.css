@@ -5,7 +5,8 @@ form.login {
   margin-right: 10%;
 }
 body {
-    background-image: url('../images/organic-produce.jpg');
+    background: url('../images/1183962-healthy-food-wallpaper-1920x1080-for-android.jpg');
+    background-size: cover;
 }
 input{
   width:100%;
@@ -30,25 +31,22 @@ h2 {
   margin-top: 70px;
   height: 200px;
   width: 100%;
-  border: 3px solid rgb(178, 133, 120);
+  border: 1px solid black;
   overflow: auto;
-  background-color: whitesmoke;
 }
 .message-box{
   height: 300px;
   width: 85%;
-  background-color:  rgb(183, 164, 146);
+  background-color: burlywood;
   float: left;
   padding: 15px;
   overflow: auto;
-  margin-bottom: 70px;
 }
 .contains-donations{
   height: 300px;
   width:15%;
+  border: 1px solid black;
   float: left;
-  background-color: whitesmoke;
-  padding: 10px;
 }
 .product-buttons{
   display: flex;
@@ -75,7 +73,7 @@ h2 {
   width:100%;
 }
 #delete {
-  right:0;
+  float: right;
 }
 #add {
   position: absolute;
@@ -84,22 +82,6 @@ h2 {
   margin-left: 80%;
   margin-top: 110px;
 }
-#add:hover {
-    transition: width 2s;
-    transition: height 2s;
-    width: 58px;
-    height: 58px;
-
-}
-#add:active {
-    transition: width 2s;
-    transition: height 2s;
-    width: 64px;
-    height: 64px;
-}
-#message-area {
-    height: 70px;
-}
-.product-list {
-  padding: 30px;
+.member-container {
+  background-image: url('../images/20_free_subtle_textures_floral_patterns.jpg');
 }

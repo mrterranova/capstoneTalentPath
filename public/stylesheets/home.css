@@ -49,12 +49,8 @@ body{
     text-align: center;
 }
 .details {
-    float: left;
-    width: 20%;
-    border: 1px solid black;
     padding: 20px;
     text-align: center;
-    height: 300px;
 }
 .charity {
     float:left;
