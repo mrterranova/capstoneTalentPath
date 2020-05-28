@@ -5,7 +5,8 @@ form.login {
   margin-right: 10%;
 }
 body {
-    background-image: url('../images/organic-produce.jpg');
+    background-image: url('../images/pexels-photo-265242.jpeg');
+    background-size: cover;
 }
 input{
   width:100%;
@@ -30,14 +31,15 @@ h2 {
   margin-top: 70px;
   height: 200px;
   width: 100%;
-  border: 3px solid rgb(178, 133, 120);
+  border: 3px solid rgb(128,124,123);
   overflow: auto;
   background-color: whitesmoke;
 }
 .message-box{
   height: 300px;
   width: 85%;
-  background-color:  rgb(183, 164, 146);
+  background: url('../images/43047.jpg') ;
+  background-size: cover;
   float: left;
   padding: 15px;
   overflow: auto;
@@ -102,4 +104,13 @@ h2 {
 }
 .product-list {
   padding: 30px;
+}
+#change-ch{
+  background-color: rgb(132,201,43);
+}
+#change-not{
+  background-color: rgb(132,201,43);
+}
+#message-area-btn {
+  background-color: rgb(132,201,43);
 }

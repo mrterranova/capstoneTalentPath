@@ -1,0 +1,39 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+input{
+  width:100%;
+}
+textarea{
+  width:100%;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+}
+h2 {
+  text-align: center;
+}
+body {
+    background: url('../images/pexels-photo-1414651.jpeg');
+    background-size: cover;
+}
+
+.display-name {
+    text-decoration: underline;
+    font-weight: bolder;
+  }
+  
+  .login {
+    right: 0;
+    margin-right: 10px;
+    position: absolute;
+    z-index: 1;
+  }
+.sect {
+    margin-top: 165px;
+}

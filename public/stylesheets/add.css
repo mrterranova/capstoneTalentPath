@@ -19,7 +19,7 @@ h2 {
   text-align: center;
 }
 body {
-    background: url('../images/pexels-photo-1625385.jpeg');
+    background: url('../images/pexels-photo-4041161.jpeg');
     background-size: cover;
 }
 
@@ -68,5 +68,6 @@ body {
 .sect {
     background-color: whitesmoke;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
 }
