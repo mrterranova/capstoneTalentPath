@@ -114,3 +114,9 @@ h2 {
 #message-area-btn {
   background-color: rgb(132,201,43);
 }
+.sect{
+  background-color: whitesmoke;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}

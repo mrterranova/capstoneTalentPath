@@ -36,4 +36,8 @@ body {
   }
 .sect {
     margin-top: 165px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      color: black;
 }

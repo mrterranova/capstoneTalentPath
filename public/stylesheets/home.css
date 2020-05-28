@@ -81,8 +81,7 @@ body{
 }
 .aboutDiv {
     background-color: whitesmoke;
-    margin: 100px;
-    padding: 20px;
+    padding-top: 30px;
 }
 #toMain {
     padding: 30px;
