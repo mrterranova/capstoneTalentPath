@@ -11,7 +11,7 @@ $(document).ready(function() {
             $.get("/api/farm").then(function(dataMore){
                 var newFarmer = ""
         if(element.charity!=null && element.industry !=null){
-        newFarmer += '<div class="newInsert"><div class="farm">'+element.business_entity+'('+element.farm_type+')'+'</div><div class="row"><div class="col-sm-3" style="border: 1px solid black;background-color:rgb(121,139,57);"><div class="details">'+
+        newFarmer += '<div class="newInsert"><div class="farm">'+element.business_entity+'('+element.farm_type+')'+'</div><div class="row"><div class="col-sm-3" style="border: 1px solid black;background-color:rgb(121,139,57); height:500px;"><div class="details">'+
         '<div class="name"><strong>'+ element.first_name+' '+ element.last_name +'</strong></div><div class="location">'+element.address+'<br> '+element.city+', '+element.state+', '+element.zip+'</div><br><a href="./donation?farm='+element.id+'"><button id="donation" data-id='+ element.id +'>DONATE HERE</button></a>'+
         '<a href="mailto:'+ element.email +'?subject=Contacting from Donation Website"><button id="contact">CONTACT HERE</button></a></div></div><div class="col-md-9"><div class="row" style="border-bottom: 1px solid black;">'+
         '<div class="col-lg-12 message-box">';
